@@ -18,7 +18,15 @@ export default function Authenticate({ token }) {
         }
       );
       const result = await response.json();
-      setSuccessMessage(result.message || "Authentication Successful");
+
+      if (result.data && result.data.username) {
+        setSuccessMessage(
+          result.message ||
+            `Authentication Successful! Username: ${result.data.username}`
+        );
+      } else {
+        setSuccessMessage("Authentication successfull!");
+      }
     } catch (error) {
       setError(error.message);
     }

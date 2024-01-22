@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+import SignUpForm from "./components/SignUpForms";
+import Authenticate from "./components/Authenticate";
 
-function App() {
-  return <div></div>;
+export default function App() {
+  return (
+    <div>
+      <SignUpForm />
+      <Authenticate />
+    </div>
+  );
 }
-
-export default App;

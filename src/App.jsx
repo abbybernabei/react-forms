@@ -2,12 +2,15 @@ import React from "react";
 import "./App.css";
 import SignUpForm from "./components/SignUpForms";
 import Authenticate from "./components/Authenticate";
+import { useState } from "react";
 
 export default function App() {
+  const [token, setToken] = useState(null);
+
   return (
-    <div>
-      <SignUpForm />
-      <Authenticate />
-    </div>
+    <>
+      <SignUpForm token={token} setToken={setToken} />
+      <Authenticate token={token} setToken={setToken} />
+    </>
   );
 }
